@@ -1,8 +1,8 @@
 (defproject circle-color "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.145"
+  :dependencies [[org.clojure/clojure "1.9.0-alpha13"]
+                 [org.clojure/clojurescript "1.9.268"
                   :exclusion [org.clojure/data.json]]
                  [org.clojure/data.json "0.2.6" :classifier "aot"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]

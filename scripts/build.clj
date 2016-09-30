@@ -19,7 +19,8 @@
      :output-to "resources/public/js/out/circle_color.js"
      :output-dir "resources/public/js/out"
      :verbose true
-     :pretty-print true
+     ;:pretty-print true
+     :optimizations :advanced
      :foreign-libs [{:file "resources/public/js/libs/react.js"
                      :provides ["React"]
                      :module-type :commonjs}
@@ -27,5 +28,7 @@
                      :provides ["Circle"]
                      :module-type :commonjs
                      :preprocess :jsx}]
+     :externs ["resources/public/js/libs/externs.js"]
+     :parallel-build true
      :closure-warnings {:non-standard-jsdoc :off}})
   (println "... done. Elapsed" (/ (- (System/nanoTime) start) 1e9) "seconds"))
