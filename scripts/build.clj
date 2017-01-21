@@ -20,15 +20,11 @@
      :output-dir "resources/public/js/out"
      :verbose true
      ;:pretty-print true
-     :optimizations :advanced
-     :foreign-libs [{:file "resources/public/js/libs/react.js"
-                     :provides ["React"]
-                     :module-type :commonjs}
-                    {:file "resources/public/js/libs/Circle.js"
-                     :provides ["Circle"]
+     :optimizations :none
+     :foreign-libs [{:file "src"
                      :module-type :commonjs
                      :preprocess :jsx}]
-     :externs ["resources/public/js/libs/externs.js"]
+     :externs ["resources/public/js/externs/externs.js"]
      :parallel-build true
      :closure-warnings {:non-standard-jsdoc :off}})
   (println "... done. Elapsed" (/ (- (System/nanoTime) start) 1e9) "seconds"))

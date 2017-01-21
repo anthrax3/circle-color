@@ -1,7 +1,7 @@
 (ns circle-color.core
   (:require [clojure.browser.repl :as repl]
-            [React :as React]
-            [Circle :as Circle]))
+            [libs.React :as React]
+            [libs.Circle :as Circle]))
 
 (def ColorInput
   (React/createClass

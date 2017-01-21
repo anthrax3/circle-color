@@ -1,4 +1,4 @@
-var React = require('./react');
+var React = require('./React');
 
 var Circle = React.createClass({
   render: function() {
@@ -13,4 +13,4 @@ var Circle = React.createClass({
 
 module.exports = {
     Circle: Circle
-};
+};;
