@@ -3,6 +3,12 @@
             [libs.React :as React]
             [libs.Circle :as Circle]))
 
+(defn bridge [m]
+  (specify! m
+    Object
+    (get [_ k]
+      (get m (keyword k)))))
+
 (def ColorInput
   (React/createClass
    #js {:render
@@ -23,7 +29,8 @@
                   (this-as this
                     (React/createElement "div" nil
                       (React/createElement ColorInput #js {:onChange (. this -handleColorChange)})
-                      (React/createElement Circle/Circle #js {:color (.. this -state -color)}))))}))
+                      (React/createElement Circle/Circle
+                        (bridge {:color (.. this -state -color)})))))}))
 
 (React/render
   (React/createElement Container)
