@@ -10,7 +10,9 @@
 (defmethod js-transforms :jsx [ijs opts]
   (let [code (str (gensym))]
     (.put engine code (:source ijs))
-    (assoc ijs :source (.eval engine (str "simple.transform(" code ", {react: true}).code")))))
+    (assoc ijs
+      :source
+      (.eval engine (str "simple.transform(" code ", {react: true, es6module: true}).code")))))
 
 (b/watch "src"
   {:main 'circle-color.core
@@ -20,9 +22,10 @@
    :verbose true
    :compiler-stats true
    :pretty-print true
+   :language-in :ecmascript6
    :foreign-libs [{:file "src/libs/Circle.js"
                    :provides ["libs.Circle"]
-                   :module-type :commonjs
+                   :module-type :es6
                    :preprocess :jsx}
                   {:file "src/libs/React.js"
                    :provides ["libs.React"]

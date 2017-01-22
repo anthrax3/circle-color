@@ -1,6 +1,6 @@
-var React = require('./React');
+import * as React from "./React.js";
 
-var Circle = React.createClass({
+export let Circle = React.createClass({
     render: function() {
         return(
             <svg width="200px" height="200px" className="center">
@@ -10,7 +10,3 @@ var Circle = React.createClass({
         );
     }
 });
-
-module.exports = {
-    Circle: Circle
-};
