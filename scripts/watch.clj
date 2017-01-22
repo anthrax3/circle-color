@@ -20,7 +20,11 @@
    :verbose true
    :compiler-stats true
    :pretty-print true
-   :foreign-libs [{:file "src"
+   :foreign-libs [{:file "src/libs/Circle.js"
+                   :provides ["libs.Circle"]
                    :module-type :commonjs
-                   :preprocess :jsx}]
+                   :preprocess :jsx}
+                  {:file "src/libs/React.js"
+                   :provides ["libs.React"]
+                   :module-type :commonjs}]
    :closure-warnings {:non-standard-jsdoc :off}})
