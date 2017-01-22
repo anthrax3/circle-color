@@ -13,4 +13,4 @@ var Circle = React.createClass({
 
 module.exports = {
     Circle: Circle
-};;
+};
